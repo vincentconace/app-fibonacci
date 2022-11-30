@@ -49,11 +49,12 @@ func (s *service) CalculateFibonacci(init, limit, index int) (int, error) {
 		fibonacci = append(fibonacci, fib)
 	}
 	fmt.Println(fibonacci)
+	var value int
 	for k, v := range fibonacci {
 		if k == index {
-			return v, nil
+			value = v
 		}
 	}
 
-	return 0, errorIndexNotFound
+	return value, nil
 }
